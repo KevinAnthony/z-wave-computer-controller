@@ -39,6 +39,9 @@ eagle.epf
 
 *.eps
 
+*.ger
+*.xln
+
 # file locks introduced since 7.x
 *.lck
 
