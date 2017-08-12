@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -156,39 +156,16 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="160" y2="0" width="0" layer="20"/>
-<wire x1="160" y1="0" x2="160" y2="100" width="0" layer="20"/>
-<wire x1="160" y1="100" x2="0" y2="100" width="0" layer="20"/>
-<wire x1="0" y1="100" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="0" y2="64.77" width="0.1524" layer="20"/>
+<wire x1="0" y1="64.77" x2="77.47" y2="64.77" width="0.1524" layer="20"/>
+<wire x1="77.47" y1="64.77" x2="77.47" y2="0" width="0.1524" layer="20"/>
+<wire x1="77.47" y1="0" x2="0" y2="0" width="0.1524" layer="20"/>
+<text x="68.58" y="44.45" size="1.778" layer="21">From
+Case</text>
+<text x="69.85" y="17.78" size="1.778" layer="21">To
+MB</text>
 </plain>
 <libraries>
-<library name="SparkFun-Aesthetics" urn="urn:adsk.eagle:library:507">
-<description>&lt;h3&gt;SparkFun Aesthetics&lt;/h3&gt;
-This library contiains non-functional items such as logos, build/ordering notes, frame blocks, etc. 
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="CREATIVE_COMMONS" library_version="1">
-<description>&lt;h3&gt;Creative Commons License Template&lt;/h3&gt;
-&lt;p&gt;CC BY-SA 4.0 License with &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;link to license&lt;/a&gt; and placeholder for designer name.&lt;/p&gt;
-&lt;p&gt;Devices using:
-&lt;ul&gt;&lt;li&gt;FRAME_LEDGER&lt;/li&gt;
-&lt;li&gt;FRAME_LETTER&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
-<text x="-20.32" y="5.08" size="1.778" layer="51" font="vector">Released under the Creative Commons Attribution Share-Alike 4.0 License</text>
-<text x="0" y="2.54" size="1.778" layer="51" font="vector"> https://creativecommons.org/licenses/by-sa/4.0/</text>
-<text x="11.43" y="0" size="1.778" layer="51" font="vector">Designed by:</text>
-</package>
-</packages>
-</library>
 <library name="con-molex" urn="urn:adsk.eagle:library:165">
 <description>&lt;b&gt;Molex Connectors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -1443,6 +1420,25 @@ type 0207, grid 10 mm</description>
 </package>
 </packages>
 </library>
+<library name="holes" urn="urn:adsk.eagle:library:237">
+<description>&lt;b&gt;Mounting Holes and Pads&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="3,2-PAD" library_version="1">
+<description>&lt;b&gt;MOUNTING PAD&lt;/b&gt; 3.2 mm, round</description>
+<wire x1="-2.159" y1="0" x2="0" y2="-2.159" width="2.4892" layer="51" curve="90" cap="flat"/>
+<wire x1="0" y1="2.159" x2="2.159" y2="0" width="2.4892" layer="51" curve="-90" cap="flat"/>
+<circle x="0" y="0" radius="3.429" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.762" width="0.4572" layer="51"/>
+<circle x="0" y="0" radius="3.683" width="1.27" layer="39"/>
+<circle x="0" y="0" radius="3.683" width="1.27" layer="40"/>
+<circle x="0" y="0" radius="3.556" width="1.016" layer="43"/>
+<circle x="0" y="0" radius="1.7" width="0.1524" layer="21"/>
+<pad name="B3,2" x="0" y="0" drill="3.2" diameter="5.842"/>
+<text x="-1.27" y="-3.81" size="1.27" layer="48">3,2</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1537,12 +1533,12 @@ design rules under a new name.</description>
 </designrules>
 <autorouter>
 <pass name="Default">
-<param name="RoutingGrid" value="50mil"/>
+<param name="RoutingGrid" value="12.5mil"/>
 <param name="AutoGrid" value="1"/>
-<param name="Efforts" value="0"/>
+<param name="Efforts" value="2"/>
 <param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
-<param name="PrefDir.1" value="a"/>
+<param name="PrefDir.1" value="-"/>
 <param name="PrefDir.2" value="0"/>
 <param name="PrefDir.3" value="0"/>
 <param name="PrefDir.4" value="0"/>
@@ -1557,7 +1553,7 @@ design rules under a new name.</description>
 <param name="PrefDir.13" value="0"/>
 <param name="PrefDir.14" value="0"/>
 <param name="PrefDir.15" value="0"/>
-<param name="PrefDir.16" value="a"/>
+<param name="PrefDir.16" value="|"/>
 <param name="cfVia" value="8"/>
 <param name="cfNonPref" value="5"/>
 <param name="cfChangeDir" value="2"/>
@@ -1632,89 +1628,100 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="FRAME1" library="SparkFun-Aesthetics" library_urn="urn:adsk.eagle:library:507" package="CREATIVE_COMMONS" value="FRAME-LETTER" x="21.59" y="-7.62"/>
-<element name="X1" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="5566-24" value="5566-24" x="7.62" y="69.85" rot="R90">
-<attribute name="MF" value="" x="7.62" y="69.85" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="" x="7.62" y="69.85" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="7.62" y="69.85" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="7.62" y="69.85" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="X1" library="con-molex" library_urn="urn:adsk.eagle:library:165" package="5566-24" value="5566-24" x="17.78" y="30.48" rot="R90">
+<attribute name="MF" value="" x="17.78" y="30.48" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="17.78" y="30.48" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="17.78" y="30.48" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="17.78" y="30.48" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="U$1" library="adafruit" package="ZUNO" value="ZUNO" x="46.99" y="81.28"/>
-<element name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="0207/10" value="1K" x="62.23" y="59.69" rot="R270"/>
-<element name="Q1" library="transistor-npn" library_urn="urn:adsk.eagle:library:398" package="TO92" value="2N3904" x="36.83" y="58.42"/>
-<element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" value="" x="48.26" y="44.45"/>
-<element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" value="" x="59.69" y="44.45"/>
+<element name="U$1" library="adafruit" package="ZUNO" value="ZUNO" x="44.45" y="29.21" rot="R270"/>
+<element name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="0207/10" value="1K" x="62.23" y="19.05" rot="R90"/>
+<element name="Q1" library="transistor-npn" library_urn="urn:adsk.eagle:library:398" package="TO92" value="2N3904" x="62.23" y="36.83"/>
+<element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" value="" x="71.12" y="25.4"/>
+<element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" value="" x="71.12" y="40.64"/>
+<element name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,2-PAD" value="MOUNT-PAD-ROUND3.2" x="6.35" y="58.42"/>
+<element name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,2-PAD" value="MOUNT-PAD-ROUND3.2" x="6.35" y="6.35"/>
+<element name="H3" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,2-PAD" value="MOUNT-PAD-ROUND3.2" x="71.12" y="58.42"/>
+<element name="H4" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,2-PAD" value="MOUNT-PAD-ROUND3.2" x="71.12" y="6.35"/>
 </elements>
 <signals>
-<signal name="N$1">
-<contactref element="X1" pad="9"/>
-<contactref element="U$1" pad="P$2"/>
-<wire x1="29.1084" y1="78.0288" x2="29.1084" y2="88.8492" width="0.1524" layer="1"/>
-<wire x1="10.5156" y1="59.436" x2="29.1084" y2="78.0288" width="0.1524" layer="1"/>
-<wire x1="29.1084" y1="88.8492" x2="29.21" y2="88.9" width="0.1524" layer="1"/>
-<wire x1="10.5156" y1="59.436" x2="10.37" y2="59.35" width="0.1524" layer="1"/>
-</signal>
-<signal name="N$2">
-<contactref element="X1" pad="7"/>
-<contactref element="U$1" pad="P$3"/>
-<wire x1="10.5156" y1="67.6656" x2="31.75" y2="88.9" width="0.1524" layer="16"/>
-<wire x1="10.5156" y1="67.6656" x2="10.37" y2="67.75" width="0.1524" layer="16"/>
-</signal>
 <signal name="N$3">
 <contactref element="X1" pad="12"/>
 <contactref element="U$1" pad="P$10"/>
-<wire x1="49.53" y1="88.0872" x2="49.53" y2="88.9" width="0.1524" layer="1"/>
-<wire x1="33.0708" y1="71.628" x2="49.53" y2="88.0872" width="0.1524" layer="1"/>
-<wire x1="33.0708" y1="69.342" x2="33.0708" y2="71.628" width="0.1524" layer="1"/>
-<wire x1="10.5156" y1="46.7868" x2="33.0708" y2="69.342" width="0.1524" layer="1"/>
-<wire x1="10.5156" y1="46.7868" x2="10.37" y2="46.75" width="0.1524" layer="1"/>
+<wire x1="33.02" y1="7.62" x2="52.07" y2="26.67" width="0.1524" layer="16"/>
+<wire x1="20.32" y1="7.62" x2="33.02" y2="7.62" width="0.1524" layer="16"/>
+<wire x1="20.32" y1="7.62" x2="20.53" y2="7.38" width="0.1524" layer="16"/>
 </signal>
 <signal name="N$4">
 <contactref element="U$1" pad="P$16"/>
 <contactref element="R1" pad="1"/>
-<wire x1="62.3316" y1="71.0184" x2="62.3316" y2="64.77" width="0.1524" layer="1"/>
-<wire x1="62.3316" y1="64.77" x2="62.23" y2="64.77" width="0.1524" layer="1"/>
-<wire x1="62.3316" y1="71.0184" x2="62.23" y2="71.12" width="0.1524" layer="1"/>
+<wire x1="53.34" y1="13.97" x2="62.23" y2="13.97" width="0.1524" layer="1"/>
+<wire x1="53.34" y1="15.24" x2="53.34" y2="13.97" width="0.1524" layer="1"/>
+<wire x1="34.29" y1="15.24" x2="53.34" y2="15.24" width="0.1524" layer="1"/>
+<wire x1="34.29" y1="13.97" x2="34.29" y2="15.24" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$5">
 <contactref element="R1" pad="2"/>
 <contactref element="Q1" pad="2"/>
-<wire x1="43.1292" y1="54.7116" x2="62.1792" y2="54.7116" width="0.1524" layer="1"/>
-<wire x1="37.6428" y1="60.198" x2="43.1292" y2="54.7116" width="0.1524" layer="1"/>
-<wire x1="36.8808" y1="60.198" x2="37.6428" y2="60.198" width="0.1524" layer="1"/>
-<wire x1="62.1792" y1="54.7116" x2="62.23" y2="54.61" width="0.1524" layer="1"/>
-<wire x1="36.8808" y1="60.198" x2="36.83" y2="60.325" width="0.1524" layer="1"/>
+<wire x1="62.23" y1="38.735" x2="62.23" y2="24.13" width="0.1524" layer="1"/>
 </signal>
 <signal name="TOMOTHERBOARD">
 <contactref element="Q1" pad="1"/>
 <contactref element="JP1" pad="1"/>
 <contactref element="JP2" pad="1"/>
-<wire x1="38.1" y1="53.34" x2="38.1" y2="58.42" width="0.1524" layer="1"/>
-<wire x1="46.99" y1="44.45" x2="38.1" y2="53.34" width="0.1524" layer="1"/>
-<wire x1="51.6636" y1="44.3484" x2="58.3692" y2="44.3484" width="0.1524" layer="16"/>
-<wire x1="49.9872" y1="42.672" x2="51.6636" y2="44.3484" width="0.1524" layer="16"/>
-<wire x1="48.768" y1="42.672" x2="49.9872" y2="42.672" width="0.1524" layer="16"/>
-<wire x1="46.99" y1="44.45" x2="48.768" y2="42.672" width="0.1524" layer="16"/>
-<wire x1="58.3692" y1="44.3484" x2="58.42" y2="44.45" width="0.1524" layer="16"/>
+<wire x1="67.31" y1="40.64" x2="63.5" y2="36.83" width="0.1524" layer="1"/>
+<wire x1="69.85" y1="40.64" x2="67.31" y2="40.64" width="0.1524" layer="1"/>
+<wire x1="69.85" y1="40.64" x2="69.85" y2="25.4" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$7">
 <contactref element="Q1" pad="3"/>
 <contactref element="JP1" pad="2"/>
 <contactref element="JP2" pad="2"/>
-<wire x1="49.53" y1="44.5008" x2="35.6616" y2="58.3692" width="0.1524" layer="16"/>
-<wire x1="35.6616" y1="58.3692" x2="35.56" y2="58.42" width="0.1524" layer="16"/>
-<wire x1="49.53" y1="44.5008" x2="49.53" y2="44.45" width="0.1524" layer="16"/>
-<wire x1="60.5028" y1="44.3484" x2="60.96" y2="44.3484" width="0.1524" layer="1"/>
-<wire x1="58.8264" y1="42.672" x2="60.5028" y2="44.3484" width="0.1524" layer="1"/>
-<wire x1="51.2064" y1="42.672" x2="58.8264" y2="42.672" width="0.1524" layer="1"/>
-<wire x1="49.53" y1="44.3484" x2="51.2064" y2="42.672" width="0.1524" layer="1"/>
-<wire x1="60.96" y1="44.3484" x2="60.96" y2="44.45" width="0.1524" layer="1"/>
-<wire x1="49.53" y1="44.3484" x2="49.53" y2="44.45" width="0.1524" layer="1"/>
+<wire x1="62.23" y1="36.83" x2="60.96" y2="36.83" width="0.1524" layer="16"/>
+<wire x1="63.5" y1="38.1" x2="62.23" y2="36.83" width="0.1524" layer="16"/>
+<wire x1="69.85" y1="38.1" x2="63.5" y2="38.1" width="0.1524" layer="16"/>
+<wire x1="72.39" y1="40.64" x2="69.85" y2="38.1" width="0.1524" layer="16"/>
+<wire x1="72.39" y1="40.64" x2="72.39" y2="25.4" width="0.1524" layer="1"/>
+</signal>
+<signal name="VCC">
+<contactref element="X1" pad="9"/>
+<contactref element="U$1" pad="P$2"/>
+<wire x1="35.56" y1="30.48" x2="52.07" y2="46.99" width="0.1524" layer="16"/>
+<wire x1="30.48" y1="30.48" x2="35.56" y2="30.48" width="0.1524" layer="16"/>
+<wire x1="20.32" y1="20.32" x2="30.48" y2="30.48" width="0.1524" layer="16"/>
+<wire x1="20.32" y1="20.32" x2="20.53" y2="19.98" width="0.1524" layer="16"/>
+</signal>
+<signal name="GND">
+<contactref element="X1" pad="7"/>
+<contactref element="U$1" pad="P$3"/>
+<contactref element="H1" pad="B3,2"/>
+<contactref element="H3" pad="B3,2"/>
+<contactref element="H2" pad="B3,2"/>
+<contactref element="H4" pad="B3,2"/>
+<wire x1="16.51" y1="24.13" x2="20.32" y2="27.94" width="0.1524" layer="1"/>
+<wire x1="16.51" y1="10.16" x2="16.51" y2="24.13" width="0.1524" layer="1"/>
+<wire x1="15.24" y1="8.89" x2="16.51" y2="10.16" width="0.1524" layer="1"/>
+<wire x1="6.35" y1="8.89" x2="15.24" y2="8.89" width="0.1524" layer="1"/>
+<wire x1="20.32" y1="27.94" x2="20.53" y2="28.38" width="0.1524" layer="1"/>
+<wire x1="6.35" y1="8.89" x2="6.35" y2="58.42" width="0.1524" layer="1"/>
+<wire x1="6.35" y1="8.89" x2="6.35" y2="6.35" width="0.1524" layer="1"/>
+<wire x1="66.04" y1="58.42" x2="59.69" y2="52.07" width="0.1524" layer="16"/>
+<wire x1="59.69" y1="52.07" x2="52.07" y2="44.45" width="0.1524" layer="16"/>
+<wire x1="71.12" y1="58.42" x2="66.04" y2="58.42" width="0.1524" layer="16"/>
+<wire x1="76.2" y1="11.43" x2="71.12" y2="6.35" width="0.1524" layer="1"/>
+<wire x1="76.2" y1="53.34" x2="76.2" y2="11.43" width="0.1524" layer="1"/>
+<wire x1="71.12" y1="58.42" x2="76.2" y2="53.34" width="0.1524" layer="1"/>
+<wire x1="12.7" y1="52.07" x2="6.35" y2="58.42" width="0.1524" layer="16"/>
+<wire x1="59.69" y1="52.07" x2="12.7" y2="52.07" width="0.1524" layer="16"/>
 </signal>
 </signals>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, Eagle supports online libraries. The ids
 of those online libraries will not be understood (or retained)
